@@ -1,0 +1,66 @@
+---
+// Supports weights 100-900
+import "@fontsource/onest";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+  >
+    <Header />
+    <slot />
+    <Footer />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Onest", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* height: 100vh; */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  header {
+    position: fixed;
+    top: 0; /* Ajusta según sea necesario; 0 significa que el header estará pegado en la parte superior */
+    z-index: 100; /* Asegura que el header esté por encima de otros elementos en la página */
+  }
+
+  .divisor {
+    border-top: 1px solid #ccc;
+    width: 75%;
+  }
+</style>

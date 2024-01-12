@@ -1,0 +1,109 @@
+---
+import JavaIcon from './icons/Java.astro'
+import SpringIcon from './icons/Spring.astro'
+import MongoIcon from './icons/Mongo.astro'
+import ReactIcon from './icons/React.astro'
+import FlutterIcon from './icons/Flutter.astro'
+import DartIcon from './icons/Dart.astro'
+const TAGS ={
+    Java:{
+        name:"Java",
+        class:"bg-black text-white border",
+        icon: JavaIcon,
+    },
+    SpringBoot:{
+        name:"Spring Boot",
+        class:"bg-black text-white border",
+        icon: SpringIcon,
+    },
+    MongoDB:{
+        name:"MongoDB",
+        class:"bg-black text-white border",
+        icon: MongoIcon,
+    },
+    React:{
+        name:"React",
+        class:"bg-black text-white border",
+        icon: ReactIcon,
+    },
+    Flutter:{
+        name:"Flutter",
+        class:"bg-black text-white border",
+        icon: FlutterIcon,
+    },
+    Dart:{
+        name:"Dart",
+        class:"bg-black text-white border",
+        icon: DartIcon,
+    }
+}
+
+const IMAGES = ["images/buslink1.png", "images/buslink2.png", "images/buslink3.png", "images/buslink4.png", "images/buslink5.png", "images/buslink6.png", "images/buslink7.png", "images/buslink8.png", "images/buslink9.png", "images/buslink10.png", "images/buslink11.png", "images/buslink12.png", "images/buslink13.jpg", "images/buslink14.jpg", "images/buslink15.png", "images/buslink16.jpg", "images/buslink17.png", "images/buslink18.jpg", "images/buslink19.jpg"]
+const PROJECTS = [
+  {
+    title: "Bus-Link",
+    description: "It is a system that consists of the management and purchase of tickets to travel on interprovincial buses from land terminals. As an administrator it is possible to manage the cooperatives and their buses, the users of the system and the assignment of the frequencies that the cooperatives have for their buses. Besides, It is possible to sell tickets based on the number of seats available. The value of the tickets varies depending on the type of seat. As a customer you can purchase a ticket from the web or mobile application.",
+    link: "sdcdsc",
+    github: "sdcdsc",
+    image: IMAGES,
+    tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MongoDB, TAGS.React, TAGS.Flutter, TAGS.Dart],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="px-3 pt-2 border rounded-md">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <p class="text-yellow-200 mb-2">Technologies:</p>
+      <ul class="flex gap-x-2 flex-row">
+        {project.tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                <tag.icon class="size-4" />
+                {tag.name}
+            </span>
+         </li>
+        ))}
+      </ul>
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        {
+            project.image.map(image => (
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src={image} class="absolute block w-90 h-80 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            ))
+        }
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+    </article>
+  ))
+}

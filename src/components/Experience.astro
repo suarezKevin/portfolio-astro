@@ -1,0 +1,178 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import JavaIcon from "./icons/Java.astro";
+import SpringIcon from "./icons/Spring.astro";
+import MongoIcon from "./icons/Mongo.astro";
+import ReactIcon from "./icons/React.astro";
+import FlutterIcon from "./icons/Flutter.astro";
+import DartIcon from "./icons/Dart.astro";
+import MySQLIcon from "./icons/MySQL.astro";
+import PostgreIcon from "./icons/Postgre.astro";
+import SqlServerIcon from "./icons/SqlServer.astro";
+import JavaScriptIcon from "./icons/JavaScript.astro";
+import PythonIcon from "./icons/Python.astro";
+import CsharpIcon from "./icons/Csharp.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import AstroiIcon from "./icons/Astroi.astro";
+import AngularIcon from "./icons/Angular.astro";
+import LaravelIcon from "./icons/Laravel.astro";
+import GitIcon from "./icons/Git.astro";
+import FigmaIcon from "./icons/Figma.astro";
+import JiraIcon from "./icons/Jira.astro";
+const EXPERIENCE = [
+  {
+    date: "2023",
+    title: "Pre professional practices",
+    description:
+      "Development of a web application for the selection of teachers for the postgraduate program at the Postgraduate Center of the Technical University of Ambato.",
+  },
+];
+const SKILLS = {
+  MySql: {
+    name: "MySQL",
+    class: "bg-black text-white border",
+    icon: MySQLIcon,
+  },
+  Postgre: {
+    name: "PostgreSQL",
+    class: "bg-black text-white border",
+    icon: PostgreIcon,
+  },
+  Mongo: {
+    name: "MongoDB",
+    class: "bg-black text-white border",
+    icon: MongoIcon,
+  },
+  SqlServer: {
+    name: "SQL Server",
+    class: "bg-black text-white border",
+    icon: SqlServerIcon,
+  },
+  Java: {
+    name: "Java",
+    class: "bg-black text-white border",
+    icon: JavaIcon,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-black text-white border",
+    icon: JavaScriptIcon,
+  },
+  Dart: {
+    name: "Dart",
+    class: "bg-black text-white border",
+    icon: DartIcon,
+  },
+  Python: {
+    name: "Pyhton",
+    class: "bg-black text-white border",
+    icon: PythonIcon,
+  },
+  Csharp: {
+    name: "C#",
+    class: "bg-black text-white border",
+    icon: CsharpIcon,
+  },
+  Html: {
+    name: "HTML",
+    class: "bg-black text-white border",
+    icon: HTMLIcon,
+  },
+  Css: {
+    name: "CSS",
+    class: "bg-black text-white border",
+    icon: CSSIcon,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-black text-white border",
+    icon: TailwindIcon,
+  },
+  SpringBoot: {
+    name: "Spring Boot",
+    class: "bg-black text-white border",
+    icon: SpringIcon,
+  },
+  Flutter: {
+    name: "Flutter",
+    class: "bg-black text-white border",
+    icon: FlutterIcon,
+  },
+  Astro: {
+    name: "Astro",
+    class: "bg-black text-white border",
+    icon: AstroiIcon,
+  },
+  Angular: {
+    name: "Angular",
+    class: "bg-black text-white border",
+    icon: AngularIcon,
+  },
+  Laravel: {
+    name: "Laravel",
+    class: "bg-black text-white border",
+    icon: LaravelIcon,
+  },
+  Git: {
+    name: "Git",
+    class: "bg-black text-white border",
+    icon: GitIcon,
+  },
+  Jira: {
+    name: "Jira",
+    class: "bg-black text-white border",
+    icon: JiraIcon,
+  },
+  Figma: {
+    name: "Figma",
+    class: "bg-black text-white border",
+    icon: FigmaIcon,
+  },
+};
+const skillList = [
+  SKILLS.MySql,
+  SKILLS.Postgre,
+  SKILLS.Mongo,
+  SKILLS.SqlServer,
+  SKILLS.Java,
+  SKILLS.JavaScript,
+  SKILLS.Dart,
+  SKILLS.Python,
+  SKILLS.Csharp,
+  SKILLS.Html,
+  SKILLS.Css,
+  SKILLS.Tailwind,
+  SKILLS.SpringBoot,
+  SKILLS.Flutter,
+  SKILLS.Astro,
+  SKILLS.Angular,
+  SKILLS.Laravel,
+  SKILLS.Git,
+  SKILLS.Jira,
+  SKILLS.Figma,
+];
+---
+
+<div class="mb-8">
+  <h3 class="mb-4 text-2xl">Skills</h3>
+  <div class="grid grid-rows-4 grid-flow-col gap-4 mb-7">
+    {skillList.map((skill) => 
+      <div class={`border border-teal-400 px-2 py-2 rounded-3xl w-36 flex flex-col justify-center items-center shadow-xl shadow-teal-400 ${skill.class}`}>
+        <skill.icon class="size-6"/>
+        <p class="text-center">{skill.name}</p>
+      </div>
+    )}
+  </div>
+<h1 class="mb-4 text-2xl">Laboral Experience</h1>
+  <ol class="relative border-s border-gray-200 ml-3 dark:border-gray-700">
+    {
+      EXPERIENCE.map((experience) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>
+</div>

@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import GmailIcon from "../components/icons/Gmail.astro";
+import ExperienceIcon from "../components/icons/Experience.astro";
+import ProjectIcon from "../components/icons/Project.astro";
+import AboutmeIcon from "../components/icons/Aboutme.astro";
+import ContactIcon from "../components/icons/ContactIcon.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Contact from "../components/Contact.astro";
+import Section from "../components/Section.astro";
+---
+
+<Layout
+  title="Kevin Suárez Portfolio: A Dev-oto of Development, Transforming Lines into Digital Masterpieces!"
+  description="Hi, I'm Kevin Suárez, a passionate developer who transforms lines of code into extraordinary digital experiences! My journey in the world of development has been an exciting journey of discovery and learning, and my portfolio is a reflection of the skills I have cultivated over the years."
+>
+  <main class="px-4">
+    <Section class="mb-20 flex justify-items-center flex-col md:flex-col">
+      <div class="flex justify-center mt-24">
+        <img
+          class="rounded-full size-80 object-center mb-4"
+          src="images/sk.jpg"
+          alt="Kevin Suarez photo"
+        />
+      </div>
+      <div class="flex justify-center text-yellow-200 mb-2">
+        <span class="border rounded-md px-2 py-1 text-1xl">Backend Developer and Mobile Development</span> 
+      </div>
+      <h1
+        class="text-4xl font-bold flex justify-center pb-6 md:text-5xl lg:pb-10"
+      >
+        Hey, I'm Kevin Suarez
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        I am a passionate developer, about creating robust and efficient mobile
+        and backend applications. I have experience in a variety of technologies
+        and frameworks, and I am always willing to learn new things.
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/kevin-suarez-6a16752a7/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/suarezKevin">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:suarezk453@gmail.com">
+          <GmailIcon class="size-4 md:size-6" />
+          suarezk453@gmail.com
+        </SocialPill>
+      </nav>
+    </Section>
+    <div class="divisor ml-40">
+
+    </div>
+    <Section id="experience" class="mt-16 mb-20">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <ExperienceIcon class="size-7" /> Experience
+      </h2>
+      <Experience />
+    </Section>
+    <div class="divisor ml-40">
+
+    </div>
+    <Section id="projects" class="mt-16 mb-20">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <ProjectIcon class="size-7" /> Projects
+      </h2>
+      <Projects />
+    </Section>
+    <div class="divisor ml-40">
+
+    </div>
+    <Section id="aboutme" class="mt-16 mb-20">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <AboutmeIcon class="size-7" /> About me
+      </h2>
+      <AboutMe />
+    </Section>
+    <div class="divisor ml-40">
+
+    </div>
+    <Section id="contact" class="mt-16 mb-20">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <ContactIcon class="size-7" /> Contact
+      </h2>
+      <p class="text-teal-400">Mail me: <span class="font-bold text-emerald-400">suarezk453@gmail.com</span></p>
+      
+      <Contact />
+    </Section>
+  </main>
+</Layout>
